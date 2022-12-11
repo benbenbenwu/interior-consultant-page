@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --black-color: #181719;
+
+  --gray-color-1: #bdbdbd;
+  --gray-color-2:#828282
+
+  --white-color: #ffffff;
+}
+
+ul{
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding:  0 7.7rem;
+  background-color: var(--black-color);
+}
