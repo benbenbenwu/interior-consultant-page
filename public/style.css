@@ -53,7 +53,8 @@ body {
   text-transform: uppercase;
 }
 
-.nav-mobile-box {
+.nav-mobile-box,
+.menu-checkbox {
   display: none;
 }
 
