@@ -9,14 +9,19 @@
 :root {
   --black-color: #181719;
 
-  --gray-color-1: #bdbdbd;
-  --gray-color-2:#828282
+  --gray-color-1: #a9a9a9a9;
+  --gray-color-2: #828282;
 
   --white-color: #ffffff;
 }
 
-ul{
+ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
 }
 
 html {
@@ -25,6 +30,262 @@ html {
 
 body {
   box-sizing: border-box;
-  padding:  0 7.7rem;
+  padding: 0 7.7rem;
   background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.header {
+  padding: 4.8rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home {
+  width: 10rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  border: 1px solid var(--white-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav-mobile-box {
+  display: none;
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.nav-mobile .nav-list {
+  flex-direction: column;
+  gap: 3.6rem;
+  justify-content: center;
+}
+
+.nav-list {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8.6rem;
+}
+
+.nav-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.nav-item:hover {
+  font-weight: 700;
+  border-bottom: 2px solid var(--white-color);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 12rem;
+}
+
+.interior-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading-primary {
+  font-family: "Lora", serif;
+  font-size: 4.8rem;
+  font-weight: 500;
+  line-height: 1.27;
+  margin-bottom: 4rem;
+}
+
+.heading-sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 4.8rem;
+  padding-right: 30rem;
+}
+
+.more-box {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.interior-img-box {
+  position: relative;
+}
+
+.interior-img {
+  width: 100%;
+}
+
+.autor-box {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  gap: 2rem;
+  padding: 3.4rem 2.6rem;
+  position: absolute;
+  left: 40%;
+  bottom: -20%;
+  background-color: var(--black-color);
+}
+
+.autor-mess-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.autor-mess {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.autor-img {
+  width: 10%;
+  height: max-content;
+  border-radius: 50%;
+}
+
+.autor-name {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.autor-job-title {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: var(--gray-color-2);
+}
+
+.autor-desc {
+  font-family: "Lora", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  padding-right: 3rem;
+}
+
+.footer {
+  height: 5.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--gray-color-1);
+}
+
+.footer-text a {
+  font-weight: 700;
+  color: var(--gray-color-1);
+}
+
+@media (max-width: 23.44em) {
+  body {
+    height: 100vh;
+    padding: 0 1.2rem;
+    position: relative;
+  }
+
+  .home {
+    align-self: center;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menu {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .menu-checkbox {
+    display: none;
+  }
+
+  .menu-label {
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    background-image: url(menu.svg);
+    background-color: var(--white-color);
+    background-size: 100%;
+    width: 5rem;
+    height: 4.8rem;
+    z-index: 20;
+  }
+
+  .menu-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black-color);
+    display: none;
+    z-index: 10;
+  }
+  .nav-mobile {
+    z-index: 30;
+  }
+
+  .menu-checkbox:checked ~ .menu-bg,
+  .menu-checkbox:checked ~ .nav-mobile {
+    display: block;
+  }
+
+  .menu-checkbox:checked ~ .menu-label {
+    background-image: url(close.svg);
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    margin-bottom: 20rem;
+  }
+
+  .heading-primary {
+    font-size: 3.6rem;
+    white-space: nowrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .heading-sub {
+    font-size: 1.4rem;
+    padding-right: 0rem;
+    margin-bottom: 2.5rem;
+  }
+  .more-box {
+    margin-bottom: 2.5rem;
+  }
+
+  .autor-box {
+    padding: 2rem;
+    left: 10%;
+    bottom: -50%;
+  }
 }
